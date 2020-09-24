@@ -1,6 +1,9 @@
-# BANAM
+# BANAM: Bayesian Analysis of the Network Autocorrelation Model
+ 
+<p align="center">
+  <img src="man/figures/logo_BANAM.png" width = 250 />
 
-<img src="man/figures/logo_BANAM.png" width = 450 />
+</p>
 
 R package for Bayesian Analysis of the Network Autocorrelation Model. The methodology
 is based on:
@@ -14,6 +17,7 @@ Dittrich, D., Leenders, R.Th.A.J. Leenders, & Mulder, J. (2020). Network Autocor
 Last Modified 09/24/2020
 
 Licensed under the GNU General Public License version 2 (June, 1991)
+
 
 Basic example
 -------------
