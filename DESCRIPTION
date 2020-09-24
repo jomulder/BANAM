@@ -1,0 +1,41 @@
+Package: BANAM
+Type: Package
+Title: Bayesian Analysis of the Network Autocorrelation Model
+Version: 0.1.0
+Author: c(person(given = c("Joris"),
+             family = "Mulder",
+             role = c("aut", "cre"),
+             email = "j.mulder3@tilburguniversity.edu"),
+      person(given = "Dino",
+             family = "Dittrich",
+             role = c("aut", "ctb"),
+             email = "dino.dittrich@gmail.com"),
+      person(given = "Roger",
+             family = "Leenders",
+             role = c("aut", "ctb"),
+             email = "r.t.a.j.leenders@tilburguniversity.edu"),
+             )
+Maintainer: Joris Mulder <j.mulder3@tilburguniversity.edu>
+Description: Bayesian estimation and hypothesis testing of network autorcorrelation parameters under the network autocorrelation model (NAM).
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 3.0.0)
+Imports: 
+    Matrix,
+    extraDistr,
+    matrixcalc,
+    mvtnorm,
+    rARPACK,
+    sna,
+    tmvtnorm,
+    stats,
+    utils,
+    psych,
+    truncnorm,
+    bain,
+    BFpack
+Suggests: 
+    testthat
