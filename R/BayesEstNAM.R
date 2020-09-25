@@ -14,7 +14,7 @@
 #' NAM with a single weight matrix. The options are 'flat', 'IJ', and 'normal',
 #' for a flat prior, the independence Jeffreys prior, and a normal prior, respectively.
 #' @param priormean A scalar (or vector) specifying the prior mean(s) of the network
-#' autocorrelation(s). In the univariate case, the default prior mean is 0.37 which is
+#' autocorrelation(s). In the univariate case, the default prior mean is 0.36 which is
 #' the weakly informative prior mean from Dittrich, Leenders, & Mulder (2017). In the multivariate
 #' case zero prior means are used by default.
 #' @param priorsigma A scalar (or matrix) specofying the prior variance (or prior covariance
@@ -39,28 +39,6 @@
 #' Autocorrelation Modeling: Bayesian Techniques for Estimating and Testing Multiple
 #' Network Autocorrelations. Sociological Methodology. \url{https://doi.org/10.1177/0081175020913899}
 #' @examples
-#' \dontshow{
-#' #example analyses
-#' set.seed(3)
-#' n <- 50
-#' d1 <- .2
-#' Wadj1 <- sna::rgraph(n, tprob=d1, mode="graph")
-#' W1 <- sna::make.stochastic(Wadj1, mode="row")
-#' d2 <- .4
-#' Wadj2 <- sna::rgraph(n, tprob=d2, mode="graph")
-#' W2 <- sna::make.stochastic(Wadj2, mode="row")
-#' # set rho, beta, sigma2, and generate y
-#' rho1 <- .3
-#' K <- 3
-#' beta <- rnorm(K)
-#' sigma2 <- 1
-#' X <- matrix(c(rep(1, n), rnorm(n*(K-1))), nrow=n, ncol=K)
-#' y <- c((solve(diag(n) - rho1*W1))%*%(X%*%beta + rnorm(n)))
-#' #Bayesian estimation of NAM with a single weight matrix using a flat prior for rho
-#' best1 <- banam(y,X,W1)
-#' #Bayesian estimation of NAM with two weight matrices using standard normal priors
-#' best2 <- banam(y,X,W=list(W1,W2))
-#' }
 #' \donttest{
 #' #example analyses
 #' set.seed(3)

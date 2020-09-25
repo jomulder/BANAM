@@ -29,7 +29,7 @@ test_that("Test correct exploratory PHPs for a NAM with one weight matrix", {
 BF1b <- BFbanam(x=best1,hypothesis="rho < .4")
 test_that("Test correct one-sided PHPs for a NAM with one weight matrix", {
   expect_equivalent(
-    BF1b$PHP_confirmatory[1],.667, tolerance = .01
+    BF1b$PHP_confirmatory[1],.667, tolerance = .05
   )})
 
 #Bayesian estimation of NAM with two weight matrices using standard normal priors

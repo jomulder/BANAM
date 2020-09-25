@@ -4,14 +4,7 @@
 \alias{BFbanam}
 \title{Bayes factors for Bayesian hypothesis testing under the NAM}
 \usage{
-BFbanam(
-  x,
-  hypothesis = NULL,
-  prior = NULL,
-  complement = TRUE,
-  priortype = NULL,
-  ...
-)
+BFbanam(x, hypothesis = NULL, prior = NULL, complement = TRUE, ...)
 }
 \arguments{
 \item{x}{A \code{banam} object.}
@@ -35,7 +28,7 @@ BFmatrix_confirmatory, BFtable_confirmatory, PHP_interaction, prior,
 hypotheses, estimates, model, call.
 }
 \description{
-The \code{BFbanam} is a function ...
+\code{BFbanam} is a function ...
 }
 \references{
 Dittrich, Leender, Mulder, ...

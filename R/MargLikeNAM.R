@@ -184,7 +184,7 @@ BFbanam <- function(x,
                   hypothesis = NULL,
                   prior = NULL,
                   complement = TRUE,
-                  priortype = NULL,
+#                  priortype = NULL,
                   ...){
 
   #extract information from object
@@ -195,23 +195,27 @@ BFbanam <- function(x,
   #rhodraws <- x$rho.draws
 
   #default normal prior
-  if(is.null(priortype)){
+#  if(is.null(priortype)){
     prior_mean <- rep(0,numrho)
-
-    lapply(1:length(Wlist),function(r){
-
-    })
-
-    prior_covm <- .5**2*diag(numrho)
-  }else{
-    if(!is.list(priortype)){stop("For a 'banam' object 'priortype' must be a list of length 2 with (1) a vector of prior means and (2) a prior covariance matrix.")}
-    if(length(priortype)!=2){stop("For a 'banam' object 'priortype' must be a list of length 2 with (1) a vector of prior means and (2) a prior covariance matrix.")}
-    if(length(priortype[[1]])!=numrho){stop("For a 'banam' object the first element of 'priortype' must be a vector of prior means of length equal to the number of weight matrices.")}
-    if(!is.matrix(priortype)){stop("For a 'banam' object 'priortype' must be a list of length 2 with (1) a vector of prior means and (2) a prior covariance matrix.")}
-    if(sum(dim(length(priortype[[2]]))==c(numrho,numrho))!=2){stop("For a 'banam' object the first element of 'priortype' must be a vector of prior means of length equal to the number of weight matrices.")}
-    prior_mean <- priortype[[1]]
-    prior_covm <- priortype[[2]]
-  }
+    #scale default prior scale to upper bound each network autocorrelation
+    UBs <- unlist(lapply(1:numrho,function(r){
+      EW_r <- Re(eigen(Wlist[[r]])$values)
+      1/max(EW_r)
+    }))
+    if(numrho==1){
+      prior_covm <- diag(1) * (.5*UBs)**2
+    }else{
+      prior_covm <- diag((.5*UBs)**2)
+    }
+  # }else{
+  #   if(!is.list(priortype)){stop("For a 'banam' object 'priortype' must be a list of length 2 with (1) a vector of prior means and (2) a prior covariance matrix.")}
+  #   if(length(priortype)!=2){stop("For a 'banam' object 'priortype' must be a list of length 2 with (1) a vector of prior means and (2) a prior covariance matrix.")}
+  #   if(length(priortype[[1]])!=numrho){stop("For a 'banam' object the first element of 'priortype' must be a vector of prior means of length equal to the number of weight matrices.")}
+  #   if(!is.matrix(priortype)){stop("For a 'banam' object 'priortype' must be a list of length 2 with (1) a vector of prior means and (2) a prior covariance matrix.")}
+  #   if(sum(dim(length(priortype[[2]]))==c(numrho,numrho))!=2){stop("For a 'banam' object the first element of 'priortype' must be a vector of prior means of length equal to the number of weight matrices.")}
+  #   prior_mean <- priortype[[1]]
+  #   prior_covm <- priortype[[2]]
+  # }
   # #OF via banam object
   # prior_mean <- x$priormean
   # prior_covm <- x$priorsigma
