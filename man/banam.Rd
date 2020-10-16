@@ -4,8 +4,16 @@
 \alias{banam}
 \title{Bayesian estimation of the network autocorrelation model}
 \usage{
-banam(y, X = NULL, W, prior = "flat", priormean = NULL,
-  priorsigma = NULL, postdraws = 5000, burnin = 1000)
+banam(
+  y,
+  X = NULL,
+  W,
+  prior = "flat",
+  priormean = NULL,
+  priorsigma = NULL,
+  postdraws = 5000,
+  burnin = 1000
+)
 }
 \arguments{
 \item{y}{A numeric vector containing the observations of the outcome variable.}

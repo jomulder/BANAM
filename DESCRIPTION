@@ -30,13 +30,12 @@ Imports:
     matrixcalc,
     mvtnorm,
     rARPACK,
-    sna,
     tmvtnorm,
     stats,
     utils,
     psych,
     truncnorm,
-    bain,
-    BFpack
+    sna,
+    bain
 Suggests: 
     testthat
