@@ -10,6 +10,7 @@
 #' @importFrom utils txtProgressBar setTxtProgressBar
 #' @importFrom psych tr
 #' @importFrom sna lnam
+#' @importFrom BFpack BF
 parse_hypothesis <- getFromNamespace("parse_hypothesis", "bain")
 make_RrList2 <- getFromNamespace("make_RrList2", "BFpack")
 

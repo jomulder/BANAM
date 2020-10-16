@@ -159,28 +159,11 @@ marglikeNAM <- function(S,y,X,Wlist,mu_prior=NULL,Sigma_prior=NULL,orderconstrai
               postprob=postprobCondOrder, priordraws=priorDrawsIn, priorprobAll=priorprob))
 }
 
-#' @title Bayes factors for Bayesian hypothesis testing under the NAM
-#' @description \code{BFbanam} is a function ...
-#'
-#' @param x A \code{banam} object.
-#' @param hypothesis A character string containing the informative hypotheses to
-#' evaluate. The default is NULL, which will result in standard exploratory testing
-#' under the model \code{x}.
-#' @param prior A vector specifying the prior probabilities of the hypotheses.
-#' The default is NULL which will specify equal prior probabilities.
-#' @param complement a logical specifying whether the complement should be added
-#' to the tested hypothesis under \code{hypothesis}.
-#' @param ... Parameters passed to and from other functions.
-#' @return The output is an object of class \code{BF}. The object has elements:
-#' BFtu_exploratory, PHP_exploratory, BFtu_confirmatory, PHP_confirmatory,
-#' BFmatrix_confirmatory, BFtable_confirmatory, PHP_interaction, prior,
-#' hypotheses, estimates, model, call.
-#'
-#'
-#' @references Dittrich, Leender, Mulder, ...
+
+
+#' @method BF banam
 #' @export
-#' @rdname BFbanam
-BFbanam <- function(x,
+BF.banam <- function(x,
                   hypothesis = NULL,
                   prior = NULL,
                   complement = TRUE,

@@ -21,12 +21,12 @@ test_that("Test correct estimated rho for a NAM with one weight matrix", {
   expect_equivalent(
     best1$rho.mean,0.171, tolerance = .03
   )})
-BF1a <- BFbanam(x=best1)
+BF1a <- BF(x=best1)
 test_that("Test correct exploratory PHPs for a NAM with one weight matrix", {
   expect_equivalent(
     BF1a$PHP_exploratory,c(0.647,0.09,0.263), tolerance = .03
   )})
-BF1b <- BFbanam(x=best1,hypothesis="rho < .4")
+BF1b <- BF(x=best1,hypothesis="rho < .4")
 test_that("Test correct one-sided PHPs for a NAM with one weight matrix", {
   expect_equivalent(
     BF1b$PHP_confirmatory[1],.667, tolerance = .05
@@ -38,12 +38,12 @@ test_that("Test correct estimates for rho's for a NAM with two weight matrices",
   expect_equivalent(
     best2$rho.mean,c(0.109,0.134), tolerance = .03
   )})
-BF2a <- BFbanam(x=best2)
+BF2a <- BF(x=best2)
 test_that("Test correct exploratory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
     BF2a$PHP_exploratory[,1],c(0.661,.568), tolerance = .03
   )})
-BF2b <- BFbanam(x=best2, hypothesis = "rho1 = 0; rho2 = 0; rho1=rho2=0; rho1>rho2>0;
+BF2b <- BF(x=best2, hypothesis = "rho1 = 0; rho2 = 0; rho1=rho2=0; rho1>rho2>0;
         rho1=rho2<0")
 test_that("Test correct confirmatory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
