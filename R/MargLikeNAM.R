@@ -165,7 +165,7 @@ marglikeNAM <- function(S,y,X,Wlist,mu_prior=NULL,Sigma_prior=NULL,orderconstrai
 #' @export
 BF.banam <- function(x,
                   hypothesis = NULL,
-                  prior = NULL,
+                  prior.hyp = NULL,
                   complement = TRUE,
 #                  priortype = NULL,
                   ...){
@@ -580,15 +580,15 @@ BF.banam <- function(x,
     BFmatrix_confirmatory <- round(exp(logBFmatrix),3)
     BFta_confirmatory <- exp(output_marglike[,1] - max(output_marglike[,1]))
     # Change prior probs in case of default setting
-    if(is.null(prior)){
+    if(is.null(prior.hyp)){
       priorprobs <- rep(1/length(BFta_confirmatory),length(BFta_confirmatory))
     }else{
-      if(!is.numeric(prior) || length(prior)!=length(BFta_confirmatory)){
-        warning(paste0("Argument 'prior' should be numeric and of length ",as.character(length(BFta_confirmatory)),
+      if(!is.numeric(prior.hyp) || length(prior.hyp)!=length(BFta_confirmatory)){
+        warning(paste0("Argument 'prior.hyp' should be numeric and of length ",as.character(length(BFta_confirmatory)),
                        ". Equal prior probabilities are used."))
         priorprobs <- rep(1/length(BFta_confirmatory),length(BFta_confirmatory))
       }else{
-        priorprobs <- prior
+        priorprobs <- prior.hyp
       }
     }
     PHP_confirmatory <- priorprobs*BFta_confirmatory / sum(priorprobs*BFta_confirmatory)
