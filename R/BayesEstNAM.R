@@ -41,6 +41,7 @@
 #' @examples
 #' \donttest{
 #' #example analyses
+#' #generate example data
 #' set.seed(3)
 #' n <- 50
 #' d1 <- .2
@@ -56,10 +57,17 @@
 #' sigma2 <- 1
 #' X <- matrix(c(rep(1, n), rnorm(n*(K-1))), nrow=n, ncol=K)
 #' y <- c((solve(diag(n) - rho1*W1))%*%(X%*%beta + rnorm(n)))
+#'
 #' #Bayesian estimation of NAM with a single weight matrix using a flat prior for rho
 #' best1 <- banam(y,X,W1)
+#' print(best1)
+#'
 #' #Bayesian estimation of NAM with two weight matrices using standard normal priors
 #' best2 <- banam(y,X,W=list(W1,W2))
+#' print(best2)
+#'
+#' #Bayes factor testing of equality/order hypotheses using environment of package 'BFpack'
+#' BFbest2 <- BF(best2,hypothesis="rho1>rho2>0; rho1=rho2>0; rho1=rho2=0")
 #' }
 #' @export
 #' @rdname banam
