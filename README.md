@@ -26,8 +26,11 @@ You can install BANAM from github with:
 # install.packages("devtools")
 devtools::install_github("jomulder/BANAM")
 
+```
+
 Basic example
 -------------
+
 
 ``` r
 library("BANAM"")
@@ -64,5 +67,5 @@ print(best2)
 # autocorrelation parameters
 BFbest2 <- BF(best2,hypothesis="rho1>rho2>0; rho1=rho2>0; rho1=rho2=0")
 print(BFbest2)
-```
 
+```
