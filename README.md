@@ -16,6 +16,16 @@ Dittrich, D., Leenders, R.Th.A.J. Leenders, & Mulder, J. (2020). Network Autocor
 
 Licensed under the GNU General Public License version 2 (June, 1991)
 
+
+Installation
+------------
+
+You can install BANAM from github with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("jomulder/BANAM")
+
 Basic example
 -------------
 
@@ -56,11 +66,3 @@ BFbest2 <- BF(best2,hypothesis="rho1>rho2>0; rho1=rho2>0; rho1=rho2=0")
 print(BFbest2)
 ```
 
-Installation
-------------
-
-You can install BANAM from github with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("jomulder/BANAM")
