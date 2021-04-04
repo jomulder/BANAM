@@ -992,14 +992,14 @@ summary.banam <- function(object, ...){
   cat("\n")
   if(ncol(object$rho.draws)==1){
     cat("Network autocorrelation:\n")
-    results1 <- object$summarystats[1,]
+    results1 <- t(object$summarystats[1,])
     row.names(results1) <- "rho"
   }else{
     cat("Network autocorrelations:\n")
   }
   numrho <- ncol(object$rho.draws)
   if(numrho==1){
-    results1 <- object$summarystats[1,]
+    results1 <- t(object$summarystats[1,])
     row.names(results1) <- "rho"
   }else{
     results1 <- object$summarystats[1:numrho,]

@@ -23,12 +23,11 @@ Basic example
 -------------
 
 ``` r
-library(BANAM)
-library(sna)
-library(BFpack)
+library("BANAM"")
+library("sna"")
+library("BFpack"")
 
 # Generate data
-
 set.seed(3)
 n <- 50
 d1 <- .1
@@ -48,14 +47,16 @@ y <- c(solve(diag(n) - rho1*W1 - rho2*W2)%*%(X%*%beta + rnorm(n)))
 
 # Bayesian estimation of a NAM with a single weight matrix
 best1 <- banam(y,X,W1)
+print(best1)
 
 # Bayesian estimation of a NAM with two weight matrices
 best2 <- banam(y,X,W=list(W1,W2))
+print(best2)
 
 # Bayesian hypothesis testing of equality/order constraints on network
 # autocorrelation parameters
 BFbest2 <- BF(best2,hypothesis="rho1>rho2>0; rho1=rho2>0; rho1=rho2=0")
-
+print(BFbest2)
 ```
 
 Installation
