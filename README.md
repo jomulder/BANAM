@@ -14,8 +14,6 @@ Dittrich, D., Leenders, R.Th.A.J. Leenders, & Mulder, J. (2019). Network autocor
 
 Dittrich, D., Leenders, R.Th.A.J. Leenders, & Mulder, J. (2020). Network Autocorrelation Modeling: Bayesian Techniques for Estimating and Testing Multiple Network Autocorrelations. Sociological Methodology. https://doi.org/10.1177/0081175020913899
 
-Last Modified 09/24/2020
-
 Licensed under the GNU General Public License version 2 (June, 1991)
 
 
