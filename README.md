@@ -33,9 +33,9 @@ Basic example
 
 
 ``` r
-library("BANAM"")
-library("sna"")
-library("BFpack"")
+library("BANAM")
+library("sna")
+library("BFpack")
 
 # Generate data
 set.seed(3)
