@@ -1037,9 +1037,16 @@ summary.banam <- function(object, ...){
 
 
 
-
-
-
+#' @method get_estimates banam
+#' @export
+get_estimates.banam <- function(x, ...){
+  out <- list()
+  out$estimate <- c(x$rho.mean,x$beta.mean)
+  out$Sigma <- list(cov(cbind(x$rho.draws,x$beta.draws)))
+  class(out) <- "model_estimates"
+  attr(out, "analysisType") <- "banam"
+  out
+}
 
 
 
