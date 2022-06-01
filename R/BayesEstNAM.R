@@ -79,10 +79,10 @@ banam <- function(y,X=NULL,W,prior="flat",priormean=NULL,priorsigma=NULL,postdra
     X <- matrix(1,nrow=length(y),ncol=1)
   }else{
     if(is.matrix(X)<1){stop("If specified, X must be a matrix.")}
-    if(!(mean(X[,1])==1 & sd(X[,1])==0)){
-      #add vector of ones for intercept
-      X <- cbind(1,X)
-    }
+    # if(!(mean(X[,1])==1 & sd(X[,1])==0)){
+    #   #add vector of ones for intercept
+    #   X <- cbind(1,X)
+    # }
   }
 
   if(is.null(y)){stop("The response vector 'y' must not be empty.")}
