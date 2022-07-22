@@ -78,6 +78,7 @@ banam <- function(y,X,W,prior="flat",priormean=NULL,priorsigma=NULL,postdraws=5e
   if(is.null(X)){
     X <- matrix(1,nrow=length(y),ncol=1)
   }else{
+    if(is.data.frame(X)){X <- as.matrix(X)}
     if(is.matrix(X)<1){stop("If specified, X must be a matrix.")}
     if(!(mean(X[,1])==1 & sd(X[,1])==0)){
       #add vector of ones for intercept
@@ -87,6 +88,10 @@ banam <- function(y,X,W,prior="flat",priormean=NULL,priorsigma=NULL,postdraws=5e
 
   if(is.null(X)){stop("The design maatrix 'X' cannot be empty.")}
   if(is.null(y)){stop("The response vector 'y' cannot be empty.")}
+  if(is.null(W)){stop("The response vector 'W' cannot be empty.")}
+  if(is.data.frame(X)){X <- as.matrix(X)}
+  if(is.data.frame(y)){y <- c(as.matrix(y))}
+  if(is.data.frame(W)){W <- as.matrix(W)}
   if(!(is.matrix(W) | is.list(W))){stop("The weight matrix W should be a g x g matrix or a list of weight matrices.")}
   if(!is.vector(y)){stop("The response vector 'y' must be a vector.")}
   if(!is.numeric(y)){stop("The response vector 'y' must be numeric.")}
