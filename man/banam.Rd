@@ -6,7 +6,7 @@
 \usage{
 banam(
   y,
-  X = NULL,
+  X,
   W,
   prior = "flat",
   priormean = NULL,

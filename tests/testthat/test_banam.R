@@ -21,20 +21,19 @@ test_that("Test correct estimated rho for a NAM with one weight matrix", {
   expect_equivalent(
     best1$rho.mean,0.171, tolerance = .03
   )})
-BF1a <- BF(x=best1)
+BF1a <- BF(x=best1,hypothesis="rho < .4")
 test_that("Test correct exploratory PHPs for a NAM with one weight matrix", {
   expect_equivalent(
     BF1a$PHP_exploratory[1,],c(0.647,0.09,0.263), tolerance = .03
   )})
-BF1b <- BF(x=best1,hypothesis="rho < .4")
 test_that("Test correct one-sided PHPs for a NAM with one weight matrix", {
   expect_equivalent(
-    BF1b$PHP_confirmatory[1],.667, tolerance = .05
+    BF1a$PHP_confirmatory[1],.667, tolerance = .05
   )})
-BF1c <- BF(x=best1,hypothesis="beta1 < beta2 < 0 ; beta1 = beta2 = 0")
-test_that("Test correct one-sided PHPs for a NAM with one weight matrix", {
+BF1b <- BF(x=best1,hypothesis="beta1 < beta2 < 0 ; beta1 = beta2 = 0")
+test_that("Test correct multiple test on beta's for a NAM with one weight matrix", {
   expect_equivalent(
-    BF1c$PHP_confirmatory[1],.523, tolerance = .05
+    BF1b$PHP_confirmatory[1],.415, tolerance = .05
   )})
 
 #Bayesian estimation of NAM with two weight matrices using standard normal priors
@@ -57,7 +56,7 @@ test_that("Test correct confirmatory PHPs for a NAM with two weight matrices", {
 BF2c <- BF(x=best2, hypothesis = "beta1 < beta2 = 0")
 test_that("Test correct confirmatory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
-    BF2c$PHP_confirmatory,c(0.871,0.129), tolerance = .03
+    BF2c$PHP_confirmatory,c(0.901,0.099), tolerance = .03
   )})
 
 

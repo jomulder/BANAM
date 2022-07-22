@@ -307,22 +307,22 @@ BF.banam <- function(x,
 
   }
 
-  # default BF tests on beta
-  #compute effective sample size for beta's using estimated rho
-  rhoWsum <- Reduce("+",
-    lapply(1:length(Wlist),function(w){
-      x$rho.mean[w] * Wlist[[w]]
-    })
-  )
-  A_rho <- solve(diag(length(y)) - rhoWsum)
-  # effect sample size based on work of Faes, Molenberghs, Aerts, Verbeke, & Kenward (2009)
-  # and Bayarri et al. (2014).
-  tess <- sum(solve(cov2cor(A_rho %*% t(A_rho))))
+  # default BF tests on beta using the AAFBF
+  # #compute effective sample size for beta's using estimated rho
+  # rhoWsum <- Reduce("+",
+  #   lapply(1:length(Wlist),function(w){
+  #     x$rho.mean[w] * Wlist[[w]]
+  #   })
+  # )
+  # A_rho <- solve(diag(length(y)) - rhoWsum)
+  # # effect sample size based on work of Faes, Molenberghs, Aerts, Verbeke, & Kenward (2009)
+  # # and Bayarri et al. (2014).
+  # tess <- sum(solve(cov2cor(A_rho %*% t(A_rho))))
   get_est <- get_estimates(x)
   Args <- list()
   Args$x <- get_est$estimate[-(1:numrho)]
   Args$Sigma <- get_est$Sigma[[1]][-(1:numrho),-(1:numrho)]
-  Args$n <- tess
+  Args$n <- length(y)
   Args$hypothesis <- NULL
   Args$prior.hyp <- NULL
   Args$complement <- NULL

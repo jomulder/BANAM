@@ -71,7 +71,7 @@
 #' }
 #' @export
 #' @rdname banam
-banam <- function(y,X=NULL,W,prior="flat",priormean=NULL,priorsigma=NULL,postdraws=5e3,
+banam <- function(y,X,W,prior="flat",priormean=NULL,priorsigma=NULL,postdraws=5e3,
                     burnin=1e3){
 
   #check matrix of covariates X, and if missing add column of ones for intercept
@@ -79,13 +79,14 @@ banam <- function(y,X=NULL,W,prior="flat",priormean=NULL,priorsigma=NULL,postdra
     X <- matrix(1,nrow=length(y),ncol=1)
   }else{
     if(is.matrix(X)<1){stop("If specified, X must be a matrix.")}
-    # if(!(mean(X[,1])==1 & sd(X[,1])==0)){
-    #   #add vector of ones for intercept
-    #   X <- cbind(1,X)
-    # }
+    if(!(mean(X[,1])==1 & sd(X[,1])==0)){
+      #add vector of ones for intercept
+      X <- cbind(1,X)
+    }
   }
 
-  if(is.null(y)){stop("The response vector 'y' must not be empty.")}
+  if(is.null(X)){stop("The design maatrix 'X' cannot be empty.")}
+  if(is.null(y)){stop("The response vector 'y' cannot be empty.")}
   if(!(is.matrix(W) | is.list(W))){stop("The weight matrix W should be a g x g matrix or a list of weight matrices.")}
   if(!is.vector(y)){stop("The response vector 'y' must be a vector.")}
   if(!is.numeric(y)){stop("The response vector 'y' must be numeric.")}
@@ -165,6 +166,7 @@ banam <- function(y,X=NULL,W,prior="flat",priormean=NULL,priorsigma=NULL,postdra
     names(o$rho.mean) <- "rho"
   }
   o$beta.mean <- apply(Best1$beta.draws,2,mean)
+  #names(o$beta.mean) <- paste0(rep("beta",ncol(Best1$beta.draws)),1:ncol(Best1$beta.draws))
   if(ncol(Best1$beta.draws)>1){
     names(o$beta.mean) <- c("(Intercept)",
                             paste0(rep("beta",ncol(Best1$beta.draws)-1),1:(ncol(Best1$beta.draws)-1)))
