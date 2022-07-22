@@ -38,4 +38,7 @@ Imports:
     truncnorm,
     sna
 Suggests: 
-    testthat
+    testthat,
+    knitr
+VignetteBuilder: 
+    knitr
