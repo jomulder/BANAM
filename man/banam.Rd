@@ -9,8 +9,8 @@ banam(
   X,
   W,
   prior = "flat",
-  priormean = NULL,
-  priorsigma = NULL,
+  prior.mean = NULL,
+  prior.Sigma = NULL,
   postdraws = 5000,
   burnin = 1000
 )
@@ -28,28 +28,28 @@ a list of weight matrices (in the case of a NAM with multiple weight matrices).}
 NAM with a single weight matrix. The options are 'flat', 'IJ', and 'normal',
 for a flat prior, the independence Jeffreys prior, and a normal prior, respectively.}
 
-\item{priormean}{A scalar (or vector) specifying the prior mean(s) of the network
-autocorrelation(s). In the univariate case, the default prior mean is 0.36 which is
-the weakly informative prior mean from Dittrich, Leenders, & Mulder (2017). In the multivariate
-case zero prior means are used by default.}
+\item{prior.mean}{A scalar (or vector) specifying the prior mean(s) of the network
+autocorrelation(s). The default prior mean is 0.}
 
-\item{priorsigma}{A scalar (or matrix) specofying the prior variance (or prior covariance
+\item{prior.Sigma}{A scalar (or matrix) specifying the prior variance (or prior covariance
 matrix) of the network autocorrelation(s). In the univariate case, the default prior variance
-is 0.49 which is the weakly informative prior variance from Dittrich, Leenders, & Mulder
-(2017). In the multivariate case the prior covariance matrix is the identity matrix
-by default.}
+is 1e6. In the multivariate case, the default prior covariance matrix is the identity matrix
+times 1e6.}
 
 \item{postdraws}{An integer specifying the number of posterior draws after burn-in.}
 
 \item{burnin}{An integer specifying the number of draws for burn-in.}
 }
 \value{
-The output is an object of class \code{banam}. For users of \strong{BANAM}, the following
+The output is an object of class \code{banam}. For users of \code{BANAM}, the following
         are the useful objects:
 \itemize{
 \item \code{rho.draws} Matrix of posterior draws for the network autocorrelation parameter(s).
 \item \code{beta.draws} Matrix of posterior draws for the coefficients.
 \item \code{sigma2.draws} Matrix of posterior draws for the error variance.
+\item \code{summarystats} Table with summary statistics of the posterior.
+\item \code{residuals} Residuals based on all posterior draws.
+\item \code{fitted.values} Fitted values based on all posterior draws.
 }
 }
 \description{
@@ -62,7 +62,7 @@ parameter. In the case of multiple weight matrices, a multivariate normal prior 
 \donttest{
 #example analyses
 #generate example data
-set.seed(3)
+set.seed(234)
 n <- 50
 d1 <- .2
 Wadj1 <- sna::rgraph(n, tprob=d1, mode="graph")
@@ -91,11 +91,12 @@ BFbest2 <- BF(best2,hypothesis="rho1>rho2>0; rho1=rho2>0; rho1=rho2=0")
 }
 }
 \references{
-Dittrich, D., Leenders, R.Th.A.J. Leenders, & Mulder, J. (2017).
+Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2017).
 Bayesian estimation of the network autocorrelation model. Social Network, 48, 213–236.
 \url{https://doi.org/10.1016/j.socnet.2016.09.002}
 
-Dittrich, D., Leenders, R.Th.A.J. Leenders, & Mulder, J. (2020). Network
+Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2020). Network
 Autocorrelation Modeling: Bayesian Techniques for Estimating and Testing Multiple
-Network Autocorrelations. Sociological Methodology. \url{https://doi.org/10.1177/0081175020913899}
+Network Autocorrelations. Sociological Methodology, 50, 168-214.
+\url{https://doi.org/10.1177/0081175020913899}
 }

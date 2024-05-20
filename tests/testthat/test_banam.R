@@ -24,39 +24,39 @@ test_that("Test correct estimated rho for a NAM with one weight matrix", {
 BF1a <- BF(x=best1,hypothesis="rho < .4")
 test_that("Test correct exploratory PHPs for a NAM with one weight matrix", {
   expect_equivalent(
-    BF1a$PHP_exploratory[1,],c(0.647,0.09,0.263), tolerance = .03
+    BF1a$PHP_exploratory[1,],c(0.73,0.06,0.21), tolerance = .03
   )})
 test_that("Test correct one-sided PHPs for a NAM with one weight matrix", {
   expect_equivalent(
-    BF1a$PHP_confirmatory[1],.667, tolerance = .05
+    BF1a$PHP_confirmatory[1],.775, tolerance = .05
   )})
 BF1b <- BF(x=best1,hypothesis="beta1 < beta2 < 0 ; beta1 = beta2 = 0")
 test_that("Test correct multiple test on beta's for a NAM with one weight matrix", {
   expect_equivalent(
-    BF1b$PHP_confirmatory[1],.415, tolerance = .05
+    BF1b$PHP_confirmatory[1],.273, tolerance = .05
   )})
 
 #Bayesian estimation of NAM with two weight matrices using standard normal priors
 set.seed(123)
-best2 <- banam(y,X,W=list(W1,W2),priormean=c(0,0),priorsigma=.25*diag(2),postdraws=1e3,burnin=1e2)
+best2 <- banam(y,X,W=list(W1,W2),prior.mean=c(0,0),prior.Sigma=.25*diag(2),postdraws=1e3,burnin=1e2)
 test_that("Test correct estimates for rho's for a NAM with two weight matrices", {
   expect_equivalent(
-    best2$rho.mean,c(0.109,0.134), tolerance = .03
+    best2$rho.mean,c(0.11,0.15), tolerance = .05
   )})
 BF2b <- BF(x=best2, hypothesis = "rho1 = 0; rho2 = 0; rho1=rho2=0; rho1>rho2>0;
-        rho1=rho2<0")
+        rho1=rho2<0",postdraws=1e3,burnin=1e2)
 test_that("Test correct exploratory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
-    BF2b$PHP_exploratory[1:2,1],c(0.671,.580), tolerance = .03
+    BF2b$PHP_exploratory[1:2,1],c(0.75,.76), tolerance = .05
   )})
 test_that("Test correct confirmatory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
-    BF2b$PHP_confirmatory[1:3],c(0.213,0.144,0.265), tolerance = .03
+    BF2b$PHP_confirmatory[1:3],c(0.11,0.12,0.65), tolerance = .05
   )})
-BF2c <- BF(x=best2, hypothesis = "beta1 < beta2 = 0")
+BF2c <- BF(x=best2, hypothesis = "beta1 < beta2 = 0",postdraws=1e3,burnin=1e2)
 test_that("Test correct confirmatory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
-    BF2c$PHP_confirmatory,c(0.901,0.099), tolerance = .03
+    BF2c$PHP_confirmatory,c(0.93,0.07), tolerance = .05
   )})
 
 

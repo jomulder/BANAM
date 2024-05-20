@@ -1,7 +1,7 @@
 Package: BANAM
 Type: Package
 Title: Bayesian Analysis of the Network Autocorrelation Model
-Version: 0.1.0
+Version: 0.2.0
 Author: c(person(given = c("Joris"),
              family = "Mulder",
              role = c("aut", "cre"),
@@ -20,11 +20,10 @@ Description: Bayesian estimation and hypothesis testing of network autorcorrelat
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Depends: 
     R (>= 3.0.0),
-    BFpack,
-    bain
+    BFpack
 Imports: 
     Matrix,
     extraDistr,
@@ -32,11 +31,10 @@ Imports:
     mvtnorm,
     rARPACK,
     tmvtnorm,
-    stats,
     utils,
     psych,
-    truncnorm,
-    sna
+    sna,
+    bain
 Suggests: 
     testthat,
     knitr
