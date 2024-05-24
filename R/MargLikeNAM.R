@@ -3,11 +3,11 @@
 #' @export
 BF.banam <- function(x,
                     hypothesis = NULL,
-                    prior.hyp.explo = NULL,
-                    prior.hyp.conf = NULL,
+                    #prior.hyp.explo = NULL,
+                    #prior.hyp.conf = NULL,
                     prior.hyp = NULL,
                     complement = TRUE,
-                    log = FALSE,
+                    #log = FALSE,
                     ...){
 
   numrho <- length(x$W)
