@@ -34,11 +34,14 @@
 #' }
 #' @references Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2017).
 #' Bayesian estimation of the network autocorrelation model. Social Network, 48, 213–236.
-#' \url{https://doi.org/10.1016/j.socnet.2016.09.002}
+#' <doi:10.1016/j.socnet.2016.09.002>
+#' @references Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2019). Network autocorrelation
+#' modeling: A Bayes factor approach for testing (multiple) precise and interval hypotheses.
+#' Sociological Methods & Research, 48, 642-676. <doi:10.1177/0049124117729712>
 #' @references Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2020). Network
 #' Autocorrelation Modeling: Bayesian Techniques for Estimating and Testing Multiple
 #' Network Autocorrelations. Sociological Methodology, 50, 168-214.
-#' \url{https://doi.org/10.1177/0081175020913899}
+#' <doi:10.1177/0081175020913899>
 #' @examples
 #' \donttest{
 #' #example analyses

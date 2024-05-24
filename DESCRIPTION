@@ -2,7 +2,7 @@ Package: BANAM
 Type: Package
 Title: Bayesian Analysis of the Network Autocorrelation Model
 Version: 0.2.0
-Author: c(person(given = c("Joris"),
+Author: c(person(given = "Joris",
              family = "Mulder",
              role = c("aut", "cre"),
              email = "j.mulder3@tilburguniversity.edu"),
@@ -13,10 +13,10 @@ Author: c(person(given = c("Joris"),
       person(given = "Roger",
              family = "Leenders",
              role = c("aut", "ctb"),
-             email = "r.t.a.j.leenders@tilburguniversity.edu"),
+             email = "r.t.a.j.leenders@tilburguniversity.edu")
              )
 Maintainer: Joris Mulder <j.mulder3@tilburguniversity.edu>
-Description: Bayesian estimation and hypothesis testing of network autorcorrelation parameters under the network autocorrelation model (NAM).
+Description: Bayesian estimation and hypothesis testing of network autocorrelation parameters under the network autocorrelation model (NAM).
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -36,7 +36,4 @@ Imports:
     sna,
     bain
 Suggests: 
-    testthat,
-    knitr
-VignetteBuilder: 
-    knitr
+    testthat

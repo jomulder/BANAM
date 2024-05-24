@@ -8,11 +8,11 @@
 R package for Bayesian Analysis of the Network Autocorrelation Model. The methodology
 is based on:
 
-Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2017). Bayesian estimation of the network autocorrelation model. Social Network, 48, 213–236. https://doi.org/10.1016/j.socnet.2016.09.002
+Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2017). Bayesian estimation of the network autocorrelation model. Social Network, 48, 213–236. <doi:10.1016/j.socnet.2016.09.002>
 
-Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2019). Network autocorrelation modeling: A Bayes factor approach for testing (multiple) precise and interval hypotheses. Sociological Methods & Research, 48, 642-676. https://doi.org/10.1177/0049124117729712
+Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2019). Network autocorrelation modeling: A Bayes factor approach for testing (multiple) precise and interval hypotheses. Sociological Methods & Research, 48, 642-676. <doi:10.1177/0049124117729712>
 
-Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2020). Network Autocorrelation Modeling: Bayesian Techniques for Estimating and Testing Multiple Network Autocorrelations. Sociological Methodology, 50, 168–214. https://doi.org/10.1177/0081175020913899
+Dittrich, D., Leenders, R.Th.A.J., & Mulder, J. (2020). Network Autocorrelation Modeling: Bayesian Techniques for Estimating and Testing Multiple Network Autocorrelations. Sociological Methodology, 50, 168–214. <doi:10.1177/0081175020913899>
 
 Licensed under the GNU General Public License version 2 (June, 1991)
 

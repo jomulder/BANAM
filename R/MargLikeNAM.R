@@ -41,10 +41,10 @@ BF.banam <- function(x,
   BF.BANAM <- BF(x = post.mean,
      Sigma = post.covm,
      n = n,
-     log = log,
+     #log = log,
      hypothesis = hypothesis,
-     prior.hyp.explo = prior.hyp.explo,
-     prior.hyp.conf = prior.hyp.conf,
+     #prior.hyp.explo = prior.hyp.explo,
+     #prior.hyp.conf = prior.hyp.conf,
      prior.hyp = prior.hyp
      )
 
