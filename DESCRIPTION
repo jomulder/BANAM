@@ -1,8 +1,9 @@
 Package: BANAM
 Type: Package
+Date: 2024-04-25
 Title: Bayesian Analysis of the Network Autocorrelation Model
 Version: 0.2.0
-Author: c(person(given = "Joris",
+Author@R: c(person(given = "Joris",
              family = "Mulder",
              role = c("aut", "cre"),
              email = "j.mulder3@tilburguniversity.edu"),
@@ -15,6 +16,9 @@ Author: c(person(given = "Joris",
              role = c("aut", "ctb"),
              email = "r.t.a.j.leenders@tilburguniversity.edu")
              )
+Author: Joris Mulder [aut, cre],
+  Dino Dittrich [aut, ctb],
+  Roger Leenders [aut, ctb]
 Maintainer: Joris Mulder <j.mulder3@tilburguniversity.edu>
 Description: Bayesian estimation and hypothesis testing of network autocorrelation parameters under the network autocorrelation model (NAM).
 License: GPL (>= 3)

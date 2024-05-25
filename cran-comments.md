@@ -1,7 +1,7 @@
 # BANAM 0.2.0
 
-* Date: 2024-05-24.
-* New submission.
+* Date: 2024-04-25
+* New submission
 
 ## Test environments
 * Local OS X Ventura 13.5, R 4.3.2, clang-1400.0.29.202, GNU Fortran 12.2.0
