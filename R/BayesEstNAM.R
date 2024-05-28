@@ -154,9 +154,9 @@ banam <- function(y,X,W,prior="flat",prior.mean=NULL,prior.Sigma=NULL,postdraws=
     }
     W <- list(W)
   }
-  cat("\n")
+  #cat("\n")
 
-  message(paste0("Sampling finished"))
+  #message(paste0("Sampling finished"))
 
   o <- list()
   o$y <- y

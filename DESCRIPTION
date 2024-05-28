@@ -1,6 +1,6 @@
 Package: BANAM
 Type: Package
-Date: 2024-05-25
+Date: 2024-05-28
 Title: Bayesian Analysis of the Network Autocorrelation Model
 Version: 0.2.0
 Authors@R: c(person(given = "Joris",
@@ -17,7 +17,19 @@ Authors@R: c(person(given = "Joris",
              email = "r.t.a.j.leenders@tilburguniversity.edu")
              )
 Maintainer: Joris Mulder <j.mulder3@tilburguniversity.edu>
-Description: Bayesian estimation and hypothesis testing of network autocorrelation parameters under the network autocorrelation model (NAM).
+Description: The network autocorrelation model (NAM) can be used for studying social influence in a network. 
+    The degree of social influence is quantified via the network autocorrelation parameters. In the case of
+    a single network, the Bayesian methods as described by Dittrich, Leenders, and Mulder
+    (2017) <DOI:10.1016/j.socnet.2016.09.002> and Dittrich, Leenders, and Mulder (2019)
+    <DOI:10.1177/0049124117729712> are implemented. A normal, flat, and independence  
+    Jeffreys prior can be used for the network autocorrelation. In the case of multiple 
+    networks, the Bayesian methods as described by Dittrich, Leenders, and Mulder (2020) 
+    <DOI:10.1177/0081175020913899> are implemented. Multivariate normal priors can be 
+    used for estimating the network autocorrelation parameters. Flat priors are implemented 
+    for estimating the coefficients. For Bayesian testing of equality and order-constrained 
+    hypotheses, the default Bayes factor of Gu, Mulder, and Hoijtink, (2018) 
+    <DOI:10.1111/bmsp.12110> is used with the posterior mean and posterior covariance 
+    matrix of the NAM parameters based on flat priors as input.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

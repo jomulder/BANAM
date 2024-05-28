@@ -1,6 +1,6 @@
 # BANAM 0.2.0
 
-* Date: 2024-04-25
+* Date: 2024-04-28
 * New submission
 
 ## Test environments
