@@ -3,11 +3,11 @@
 #' @export
 BF.banam <- function(x,
                     hypothesis = NULL,
-                    #prior.hyp.explo = NULL,
-                    #prior.hyp.conf = NULL,
+                    prior.hyp.explo = NULL,
+                    prior.hyp.conf = NULL,
                     prior.hyp = NULL,
                     complement = TRUE,
-                    #log = FALSE,
+                    log = FALSE,
                     ...){
 
   numrho <- length(x$W)
@@ -41,10 +41,10 @@ BF.banam <- function(x,
   BF.BANAM <- BF(x = post.mean,
      Sigma = post.covm,
      n = n,
-     #log = log,
+     log = log,
      hypothesis = hypothesis,
-     #prior.hyp.explo = prior.hyp.explo,
-     #prior.hyp.conf = prior.hyp.conf,
+     prior.hyp.explo = prior.hyp.explo,
+     prior.hyp.conf = prior.hyp.conf,
      prior.hyp = prior.hyp
      )
 
