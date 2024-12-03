@@ -1,8 +1,8 @@
 Package: BANAM
 Type: Package
-Date: 2024-06-20
+Date: 2024-12-03
 Title: Bayesian Analysis of the Network Autocorrelation Model
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(person(given = "Joris",
              family = "Mulder",
              role = c("aut", "cre"),

@@ -1,6 +1,6 @@
-# BANAM 0.2.1
+# BANAM 0.2.2
 
-* Fix compatibility with new version of dependent package 'BFpack' 1.3.0 on CRAN. 
+* Adjustment of test to avoid error due to change of default setting in package 'BFpack'. 
 
 ## Test environments
 * Local OS X Ventura 13.5, R 4.3.2, clang-1400.0.29.202, GNU Fortran 12.2.0

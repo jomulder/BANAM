@@ -21,7 +21,7 @@ test_that("Test correct estimated rho for a NAM with one weight matrix", {
   expect_equivalent(
     best1$rho.mean,0.171, tolerance = .03
   )})
-BF1a <- BF(x=best1,hypothesis="rho < .4")
+BF1a <- BF(x=best1,hypothesis="rho < .4",prior.hyp.explo = c(1,1,1))
 test_that("Test correct exploratory PHPs for a NAM with one weight matrix", {
   expect_equivalent(
     BF1a$PHP_exploratory[1,],c(0.73,0.06,0.21), tolerance = .03
@@ -44,7 +44,7 @@ test_that("Test correct estimates for rho's for a NAM with two weight matrices",
     best2$rho.mean,c(0.10,0.17), tolerance = .05
   )})
 BF2b <- BF(x=best2, hypothesis = "rho1 = 0; rho2 = 0; rho1=rho2=0; rho1>rho2>0;
-        rho1=rho2<0",postdraws=5e2,burnin=1e2)
+        rho1=rho2<0",postdraws=5e2,burnin=1e2,prior.hyp.explo = c(1,1,1))
 test_that("Test correct exploratory PHPs for a NAM with two weight matrices", {
   expect_equivalent(
     BF2b$PHP_exploratory[1:2,1],c(0.76,.76), tolerance = .05
